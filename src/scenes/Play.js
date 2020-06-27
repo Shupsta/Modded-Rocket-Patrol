@@ -4,6 +4,13 @@ class Play extends Phaser.Scene {
         super("playScene");
     }
 
+    preload() {
+        //load images/tile sprites
+        this.load.image('rocket', './assets/rocket.png');
+        this.load.image('starship', './assets/spaceship.png');
+        this.load.image('starfield', './assets/starfield.png');
+    }
+
     create() {
         this.add.rectangle(5, 5, 630, 32, 0xFFFFFF).setOrigin(0, 0);
         this.add.rectangle(5, 443, 630, 32, 0xFFFFFF).setOrigin(0, 0);
