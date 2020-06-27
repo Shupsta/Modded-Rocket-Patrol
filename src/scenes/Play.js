@@ -56,7 +56,7 @@ class Play extends Phaser.Scene {
 
         }
         this.scoreLeft = this.add.text(69, 54, this.p1Score, scoreConfig);
-        
+
         
     }
 
@@ -104,6 +104,9 @@ class Play extends Phaser.Scene {
             ship.alpha = 1;
             boom.destroy();
         });
+        //score increment and repaint
+        this.p1Score += ship.points;
+        this.scoreLeft.text = this.p1Score;
     }
 
 }
