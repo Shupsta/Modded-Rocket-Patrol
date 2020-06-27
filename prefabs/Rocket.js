@@ -4,7 +4,37 @@ class Rocket extends Phaser.GameObjects.Sprite {
         super(scene, x, y, texture, frame);
 
         //add object to existing scene
-        scene.add.existing(this);
+        scene.add.existing(this); //add to exsisting,displayList, updateList, info provided by tutorial
+        this.isFiring = false; //track firing status
+
+    }
+
+    update() {
+
+        //left/right movement
+        if(!this.isFiring) {
+
+            if(keyLEFT.isDown && this.x >=47 ) {
+                this.x -= 2;
+            } else if (keyRIGHT.isDown && this.x <= 578 ){
+                this.x += 2;
+            }
+
+        }
+        //fire button
+        if(Phaser.Input.Keyboard.JustDown(keyF)) {
+            this.isFiring = true;
+        }
+        // if firing, move up
+        if(this.isFiring && this.y >=108) {
+            this.y -= 2;
+        }
+        // reset on miss
+        if(this.y <= 108) {
+            this.isFiring = false;
+            this.y = 431;
+        }
+
     }
 
 
