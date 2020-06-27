@@ -23,6 +23,8 @@ class Play extends Phaser.Scene {
         this.add.rectangle(37, 42, 566, 64, 0x00FF00).setOrigin(0, 0);
         //add rocket (p1)
         this.p1Rocket = new Rocket(this, game.config.width/2 - 8, 431, 'rocket').setScale(0.5, 0.5).setOrigin(0, 0);
+        //add spaceships (x3)
+        this.ship01 = new Spaceship
         //define keys
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
