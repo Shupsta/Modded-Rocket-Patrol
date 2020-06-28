@@ -47,4 +47,26 @@ class Menu extends Phaser.Scene {
         // this.scene.start("playScene");
     }
 
+    update() {
+        if(Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+            //easyMode
+            game.settings = {
+                spaceshipeSpeed: 3,
+                gameTimer: 60_000
+            }
+            this.sound.play('sfx_select');
+            this.scene.start("playScene");
+        }
+        if(Phaser.Input.Keyboard.JustDown(keyRIGHT)){
+            //hard mode
+            game.settings = {
+                spaceshipSpeed: 4,
+                gameTimer: 45_000
+            }
+            this.sound.play('sfx_select');
+            this.scene.start("playScene")
+        }
+
+    }
+
 }
