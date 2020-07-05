@@ -7,9 +7,9 @@ class Menu extends Phaser.Scene {
     preload() {
 
         //load audio
-        this.load.audio('sfx_select', './assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', './assets/explosion38.wav');
-        this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('sfx_select', './assets/gun_cocking.mp3');//sound from zapsplat.com
+        this.load.audio('sfx_explosion', './assets/duck_quack.mp3');//sound from zapsplat.com
+        this.load.audio('sfx_rocket', './assets/dog_bark.mp3');//sound from zapsplat.com
 
 
     }
@@ -34,7 +34,7 @@ class Menu extends Phaser.Scene {
         let centerY = game.config.height/2;
         let textSpacer = 64;
 
-        this.add.text(centerX, centerY - textSpacer, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY - textSpacer, 'DUCK! PATROL', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY, 'Use arrows to move and (F) to Fire', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
